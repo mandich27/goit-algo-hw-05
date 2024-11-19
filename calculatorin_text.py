@@ -3,7 +3,7 @@ import re
 
 
 def generator_numbers(text: str):
-    for match in re.findall(r'\d+\.\d+', text):                             # Шукаємо співпадіння через регулярний вираз числа розділені крапкою
+    for match in re.findall(r'\s\d+\.\d+\s', text):                         # Шукаємо співпадіння через регулярний вираз числа розділені крапкою
         yield float(match)                                                  # Співпадіння переводимо в тип float
 
 
