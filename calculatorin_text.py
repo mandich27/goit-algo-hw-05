@@ -4,13 +4,13 @@ import re
 
 def generator_numbers(text: str):
     for match in re.findall(r'\d+\.\d+', text):                             # Шукаємо співпадіння через регулярний вираз числа розділені крапкою
-        yield float(match)
+        yield float(match)                                                  # Співпадіння переводимо в тип float
 
 
-def sum_profit(text: str, func: Callable[[str], float])-> float:            # Приймаєм str і перетворюємо його в число float
+def sum_profit(text: str, func: Callable[[str], float])-> float:            # Приймаєм str і число float
     nums = 0
     for numbers in func(text):                                              # Циклом for перебираєм numbers і додаємо в nums
-        nums += numbers
+        nums += numbers                                                     # Сумуємо знайдені числа
     return nums                                                             # Повертаєм nums
 
 
